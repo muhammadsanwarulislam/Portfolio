@@ -131,3 +131,7 @@ MEDIA_ROOT =os.path.join(os.path.dirname(BASE_DIR),"static_cdn","media_root")
 LOGIN_REDIRECT_URL = 'article-list'
 LOGIN_URL='login-page'
 CRISPY_TEMPLATE_PACK ='bootstrap4'
+
+import dj_database_url
+db_from_env = dj_database_url.config()
+DATABASES['default'].update(db_from_env)
